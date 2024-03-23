@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { MEAL_API_ID } from '../utils/constants';
 
 const Modal = ({ meal, onClose }) => {
   const [mealDetails, setMealDetails] = useState(null);
@@ -6,7 +7,7 @@ const Modal = ({ meal, onClose }) => {
   useEffect(() => {
     const fetchMealDetails = async () => {
       try {
-        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`);
+        const response = await fetch(`${MEAL_API_ID}${meal.idMeal}`);
         const data = await response.json();
         setMealDetails(data.meals[0]);
       } catch (error) {
@@ -23,7 +24,6 @@ const Modal = ({ meal, onClose }) => {
 
   const { strMeal, strMealThumb, strCategory, strArea, strInstructions } = mealDetails;
 
-  // Split instructions into steps
   const steps = strInstructions.split('\r\n').filter(step => step.trim() !== '');
 
   return (
@@ -53,28 +53,4 @@ const Modal = ({ meal, onClose }) => {
 
 export default Modal;
 
-
-
-
-
-// import React from 'react';
-
-// const Modal = ({ meal, onClose }) => {
-//   const { strMeal, strMealThumb, strCategory, strArea, strInstructions } = meal;
-
-//   return (
-//     <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 bg-black bg-opacity-50">
-//       <div className="bg-white p-6 rounded-md">
-//         <button className="absolute top-2 right-2 text-gray-600" onClick={onClose}>X</button>
-//         <img src={strMealThumb} alt={strMeal} className="w-64 h-64 object-cover rounded-md mb-4" />
-//         <h2 className="text-2xl font-bold mb-2">{strMeal}</h2>
-//         <p><strong>Category:</strong> {strCategory}</p>
-//         <p><strong>Area:</strong> {strArea}</p>
-//         <p><strong>Instructions:</strong> {strInstructions}</p>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Modal;
 
