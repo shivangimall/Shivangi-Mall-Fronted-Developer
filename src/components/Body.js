@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MealCard from './MealCard';
 import Modal from './Modal';
 import AreaFilter from './AreaFilter';
+import { AREA_API,MEAL_API } from '../utils/constants';
 
 const Body = () => {
   const [mealList, setMealList] = useState([]);
@@ -11,13 +12,13 @@ const Body = () => {
   const [selectedAreas, setSelectedAreas] = useState(['indian']); // Initialize with 'indian'
 
   const fetchData = async () => {
-    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${selectedAreas.join(',')}`);
+    const response = await fetch(`${MEAL_API}${selectedAreas.join(',')}`);
     const data = await response.json();
     setMealList(data.meals);
   }
 
   const fetchAreas = async () => {
-    const response = await fetch("https://www.themealdb.com/api/json/v1/1/list.php?a=list");
+    const response = await fetch(`${AREA_API}`);
     const data = await response.json();
     setAreas(data.meals.map(area => area.strArea));
   }
