@@ -38,7 +38,7 @@ const MealCard = ({ meal, onMealClick }) => {
   const randomRating = Math.floor(Math.random() * 4) + 1;
 
   return (
-    <div className="border w-[14rem] md:w-64 m-5 md:m-10 p-3 shadow-lg rounded-md transition-transform hover:scale-105">
+    <div className="border w-[14rem] md:w-64 m-5 md:m-10 p-3 shadow-lg rounded-md transition-transform hover:scale-105 cursor-pointer">
       <div className="relative" onClick={onMealClick}>
         <img
           className="w-full h-48 object-cover rounded-t-md"

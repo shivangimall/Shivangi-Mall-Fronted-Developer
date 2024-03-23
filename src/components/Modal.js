@@ -35,7 +35,7 @@ const Modal = ({ meal, onClose }) => {
           </svg>
         </button>
         <div className="overflow-y-auto" style={{ maxHeight: 'calc(100vh - 200px)' }}>
-          <img src={strMealThumb} alt={strMeal} className="w-64 h-64 object-cover rounded-md mb-4 mx-auto" />
+          <img src={strMealThumb} alt={strMeal} className="w-64 h-60 object-cover rounded-md mb-4 mx-auto" />
           <h2 className="text-2xl font-bold mb-2 text-center">{strMeal}</h2>
           <p><strong>Category:</strong> {strCategory}</p>
           <p><strong>Area:</strong> {strArea}</p>
