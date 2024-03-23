@@ -153,7 +153,7 @@ const Body = () => {
           <AreaFilter areas={areas} onClose={toggleAreaDropdown} onApply={handleAreaSelection} />
         )}
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="flex flex-wrap justify-center items-center">
         {currentItems.map((meal) => (
           <MealCard key={meal.idMeal} meal={meal} onMealClick={() => openModal(meal)} />
         ))}
