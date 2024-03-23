@@ -1,8 +1,6 @@
 # Food Oderning Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-In the project directory, you can run:
+Food Ordering Application is a web application that allows users to explore and order food items from a variety of cuisines.
 
 ## Features
 
@@ -19,8 +17,8 @@ In the project directory, you can run:
 
 ## Setup
 
-1. Clone the repository: `git clone https://github.com/your-username/restaurant-finder.git`
-2. Navigate to the project directory: `cd restaurant-finder`
+1. Clone the repository: `git clone https://github.com/shivangimall/Shivangi-Mall-Fronted-Developer`
+2. Navigate to the project directory: `cd my-app`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
 5. Open the application in your browser: `http://localhost:3000`
